@@ -1,0 +1,1 @@
+import './shared/sb-admin-2'
