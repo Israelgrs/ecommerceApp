@@ -167,6 +167,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rmagick (4.2.5)
     ruby-graphviz (1.2.5)
       rexml
     sass-rails (6.0.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.5)
   rails-erd
+  rmagick
   sass-rails (>= 6)
   spring
   turbolinks (~> 5)

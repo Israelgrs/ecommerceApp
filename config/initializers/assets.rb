@@ -14,4 +14,10 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( site.scss site.js
                                                   backoffice.scss
-                                                  backoffice.js )
+                                                  backoffice.js
+                                                  chart/chart.js
+                                                  chart/chart.bundle.js
+                                                  demo/chart-area-demo.js
+                                                  demo/chart-bar-demo.js
+                                                  demo/chart-pie-demo.js
+                                                  demo/datatables-demo.js)

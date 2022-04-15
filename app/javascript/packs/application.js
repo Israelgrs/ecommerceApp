@@ -24,7 +24,6 @@ import datatableBS4 from 'imports-loader?define=>false!datatables.net-bs4'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-Chartkick.use(Chart)
 
 
 datatable(window, $)
