@@ -9,11 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ecommerceapp</title>
+    <title>Ecommerceapp Dashboard</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'backoffice', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -22,8 +23,15 @@
     <%= javascript_pack_tag 'datatables-simple-demo', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body id="page-top">
-  <%= yield %>
+<body class="sb-nav-fixed">
+  <%= render partial: "layouts/backoffice_shared/topbar" %>
+  <div id="layoutSidenav">
+    <%= render partial: "layouts/backoffice_shared/sidebar" %>
+    <div id="layoutSidenav_content">
+      <%= yield %>
+      <%= render partial: "layouts/backoffice_shared/footer" %>
+    </div>
+  </div>
 </body>
 
 </html>
