@@ -16,8 +16,6 @@ gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rmagick'
-# Rails gem of the Bootstrap based admin theme SB Admin 2.
-gem 'bootstrap_sb_admin_base_v2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

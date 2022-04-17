@@ -18,21 +18,12 @@
     <%= stylesheet_link_tag 'backoffice', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'backoffice', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'scripts', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'datatables-simple-demo', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body id="page-top">
-  <div id="wrapper">
-    <%= render partial: "layouts/backoffice_shared/sidebar" %>
-    <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
-          <%= render partial: "layouts/backoffice_shared/topbar" %>
-          <%= yield %>
-      </div>
-      <%= render partial: "layouts/backoffice_shared/footer" %>
-    </div>
-  </div>
-  <%= render partial: "layouts/backoffice_shared/scroll_top_button" %>
-  <%= render partial: "layouts/backoffice_shared/logout_modal" %>
+  <%= yield %>
 </body>
 
 </html>

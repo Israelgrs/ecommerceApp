@@ -7,8 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import Chartkick from "chartkick"
-import Chart from "chart.js"
+import Chart from "chartjs";
 
 
 
@@ -18,13 +17,9 @@ import "bootstrap/dist/js/bootstrap.bundle"
 import "bootstrap/dist/css/bootstrap";
 import "jquery.easing/jquery.easing"
 import '@fortawesome/fontawesome-free/js/all'
-import datatable from 'imports-loader?define=>false!datatables.net'
-import datatableBS4 from 'imports-loader?define=>false!datatables.net-bs4'
+
+global.simpleDatatables = require('simple-datatables')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-
-datatable(window, $)
-datatableBS4(window, $)
