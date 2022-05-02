@@ -4607,6 +4607,18 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
+notify.js@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/notify.js/-/notify.js-0.0.3.tgz#3e12fb0cac16b2f61e1a6a8f2554e3ffd4b88ad8"
+  integrity sha1-PhL7DKwWsvYeGmqPJVTj/9S4itg=
+  dependencies:
+    underscore "1.5.2"
+
+notifyjs@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/notifyjs/-/notifyjs-3.0.0.tgz#7418c9d6c0533aebaa643414214af53b521d1b28"
+  integrity sha1-dBjJ1sBTOuuqZDQUIUr1O1IdGyg=
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -6815,6 +6827,11 @@ unbox-primitive@^1.0.1:
     has-bigints "^1.0.1"
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
+
+underscore@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.5.2.tgz#1335c5e4f5e6d33bbb4b006ba8c86a00f556de08"
+  integrity sha1-EzXF5PXm0zu7SwBrqMhqAPVW3gg=
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"

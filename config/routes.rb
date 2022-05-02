@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   namespace :backoffice do
     get 'dashboard', to: 'dashboard#index'
+    get 'categories/index'
   end
-  devise_for :admins
+  devise_for :admins, controllers: { registrations: 'admins/registrations', sessions: 'admins/sessions'}
   devise_for :members
   root 'site/home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

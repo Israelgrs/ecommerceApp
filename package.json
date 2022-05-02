@@ -30,6 +30,8 @@
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",
     "jszip": "^3.9.1",
+    "notify.js": "^0.0.3",
+    "notifyjs": "^3.0.0",
     "popper.js": "^1.16.1",
     "scss-tokenizer": "^0.2.3",
     "simple-datatables": "^3.2.0",
