@@ -1,2 +1,56 @@
-<h1>Backoffice::Categories#index</h1>
-<p>Find me in app/views/backoffice/categories/index.html.erb</p>
+ <div class="container-fluid px-4">
+ <h1 class="mt-4">Categorias</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Listando Categorias</li>
+  </ol>
+  <% if notice %>
+    <script>
+      $.notify('<%= notice %>', "success");
+    </script>
+  <% end %>
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-list"></i>
+      Listando Categorias
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <%= link_to new_backoffice_category_path, class: "btn btn-success me-md-2" do %>
+          Nova categoria
+        <% end %>
+      </div>
+  </div>
+  <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Descrição</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Descrição</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                  <% @categories.each do |category| %>
+                    <tr>
+                        <td><%= category.id %></td>
+                        <td><%= category.description %></td>
+                        <td style="width: 150px;">
+                          <%= link_to edit_backoffice_category_path(category.id), class: "btn btn-primary" do %>
+                              <i class="fa fa-edit"></i>
+                          <% end %>
+                        <button type="button" class="btn btn-danger" disabled="true">
+                        <i class="fa fa-trash"></i>
+                        </button>
+                        </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+            </table>
+        </div>
+  </div>
+</div>

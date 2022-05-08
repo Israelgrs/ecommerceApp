@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
-
   namespace :backoffice do
     get 'dashboard', to: 'dashboard#index'
-    get 'categories/index'
+    resources :categories, except: [:show, :destroy]
   end
   devise_for :admins, controllers: { registrations: 'admins/registrations', sessions: 'admins/sessions'}
   devise_for :members
