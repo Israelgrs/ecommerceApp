@@ -1,0 +1,37 @@
+ <div class="container-fluid px-4">
+ <h1 class="mt-4">Categorias</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <%= action %> </li>
+  </ol>
+
+ <% if @category.errors.any? %>
+    <% @category.errors.full_messages.each do |message| %>
+      <script>
+        $.notify( '<%= message %>' , "error");
+      </script>
+    <% end %>
+  <% end %>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <% if action == 'Adicionando Categoria' %>
+        <i class="fas fa-plus"></i>
+      <% else %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+        <%= action %>
+    </div>
+
+ <div class="card-body">
+    <div class="col-lg-6">
+      <%= form_for([:backoffice, @category]) do |f| %>
+        <div class="form-group">
+          <label>Descrição</label>
+          <%= f.text_field :description, class:'form-control', placeholder: 'Ex: Animais de estimação' %>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+        Enviar </button>
+      <% end %>
+    </div>
+  </div>
+</div>
