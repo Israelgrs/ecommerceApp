@@ -1,0 +1,53 @@
+ <div class="container-fluid px-4">
+ <h1 class="mt-4">Categorias</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <%= action %> </li>
+  </ol>
+
+ <% if @admin.errors.any? %>
+    <% @admin.errors.full_messages.each do |message| %>
+      <script>
+        $.notify( '<%= message %>' , "error");
+      </script>
+    <% end %>
+  <% end %>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <% if action == 'Novo Administrador' %>
+        <i class="fas fa-plus"></i>
+      <% else %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+        <%= action %>
+    </div>
+
+ <div class="card-body">
+    <div class="col-lg-6">
+      <%= form_for([:backoffice, @admin]) do |f| %>
+        <div class="form-group">
+          <label>Nome</label>
+          <%= f.text_field :first_name, class:'form-control', placeholder: 'Nome' %>
+        </div>
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <%= f.text_field :last_name, class:'form-control', placeholder: 'Sobrenome' %>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <%= f.email_field :email, class:'form-control', placeholder: 'exemplo@gmail.com' %>
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <%= f.password_field :password, class:'form-control', placeholder: 'Senha' %>
+        </div>
+        <div class="form-group">
+          <label>Confirmação de senha</label>
+          <%= f.password_field :password_confirmation, class:'form-control', placeholder: 'Confirmação de senha' %>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+        Enviar </button>
+      <% end %>
+    </div>
+  </div>
+</div>

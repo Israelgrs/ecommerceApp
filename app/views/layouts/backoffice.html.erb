@@ -33,6 +33,11 @@
       <%= render partial: "layouts/backoffice_shared/footer" %>
     </div>
   </div>
+   <% if notice %>
+    <script>
+      $.notify('<%= notice %>', "success");
+    </script>
+    <% end %>
 </body>
 
 </html>

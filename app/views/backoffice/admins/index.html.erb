@@ -1,16 +1,16 @@
  <div class="container-fluid px-4">
- <h1 class="mt-4">Categorias</h1>
+ <h1 class="mt-4">Administradores</h1>
   <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Listando Categorias</li>
+    <li class="breadcrumb-item active">Listando Administradores</li>
   </ol>
 <div class="card mb-4">
   <div class="card-header">
       <i class="fas fa-list"></i>
-      Listando Categorias
+      Listando Administradores
 
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <%= link_to new_backoffice_category_path, class: "btn btn-success me-md-2" do %>
-          Nova categoria
+        <%= link_to new_backoffice_admin_path, class: "btn btn-success me-md-2" do %>
+          Novo Administrador
         <% end %>
       </div>
   </div>
@@ -30,12 +30,12 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                  <% @categories.each do |category| %>
+                  <% @admins.each do |admin| %>
                     <tr>
-                        <td><%= category.id %></td>
-                        <td><%= category.description %></td>
+                        <td><%= admin.id %></td>
+                        <td><%= admin.email %></td>
                         <td style="width: 150px;">
-                          <%= link_to edit_backoffice_category_path(category.id), class: "btn btn-primary" do %>
+                          <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-primary" do %>
                               <i class="fa fa-edit"></i>
                           <% end %>
                         <button type="button" class="btn btn-danger" disabled="true">
