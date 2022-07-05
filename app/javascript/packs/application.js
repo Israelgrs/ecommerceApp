@@ -18,8 +18,11 @@ import "bootstrap/dist/css/bootstrap";
 import "jquery.easing/jquery.easing"
 import '@fortawesome/fontawesome-free/js/all'
 
+import 'packs/sweet-alert-confirm';
+
 global.simpleDatatables = require('simple-datatables')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+

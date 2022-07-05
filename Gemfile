@@ -13,6 +13,10 @@ gem 'devise'
 gem 'devise-i18n'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+# Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem 'faker', '~> 1.6', '>= 1.6.6'
+# jquery-rails
+gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rmagick'
