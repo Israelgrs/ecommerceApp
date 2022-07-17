@@ -29,6 +29,6 @@ puts 'CATEGORIAS cadastradas com sucesso!'
 puts 'Cadastrando o administrador padrão...'
 
 Admin.create!(first_name: 'admin', last_name: 'Da silva', email: 'admin@admin.com.br',
-              password: '123456', password_confirmation: '123456')
+              password: '123456', password_confirmation: '123456', role: 0)
 
 puts 'Administrador cadastrado com sucesso!'
