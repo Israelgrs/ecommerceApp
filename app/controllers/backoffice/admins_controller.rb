@@ -12,7 +12,7 @@ class Backoffice::AdminsController < BackofficeController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      redirect_to backoffice_admins_path, notice: "A Administrador  #{@admin.first_name} foi cadastrado com sucesso!"
+      redirect_to backoffice_admins_path, notice: I18n.t('messages.created_with', item: @admin.first_name)
     else
       render :new, notice: 'Erro ao salvar administrador'
     end

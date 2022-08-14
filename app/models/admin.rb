@@ -1,6 +1,7 @@
 class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  scope :with_full_access, -> { where(role: :full_access) }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable
@@ -13,7 +14,7 @@ class Admin < ApplicationRecord
 
   def role_description
     if role == 'full_access'
-      'Acesso Completo',
+      'Acesso Completo'
     else
       'Acesso Restrito'
     end
