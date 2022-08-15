@@ -11,12 +11,4 @@ class Admin < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
-
-  def role_description
-    if role == 'full_access'
-      'Acesso Completo'
-    else
-      'Acesso Restrito'
-    end
-  end
 end
