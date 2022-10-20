@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Object oriented authorization for Rails applications
+gem 'pundit'
+
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
 

@@ -9,8 +9,10 @@
       Listando Administradores
 
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <%= link_to new_backoffice_admin_path, class: "btn btn-success me-md-2" do %>
-          Novo Administrador
+        <% if policy(@admins).new? %>
+          <%= link_to new_backoffice_admin_path, class: "btn btn-success me-md-2" do %>
+            Novo Administrador
+          <% end %>
         <% end %>
       </div>
   </div>
