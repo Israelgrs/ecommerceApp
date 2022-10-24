@@ -1,6 +1,6 @@
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: %i[edit update destroy]
-  after_action :verify_authorized, only: :new
+  after_action :verify_authorized, only: %i[new destroy]
   after_action :verify_policy_scoped, only: :index
 
   def index
@@ -26,6 +26,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update(admin_params)
+      AdminMailer.update_email(current_user, @admin).deliver_now
       redirect_to backoffice_admins_path, notice: "A Administrador #{@admin.first_name} foi atualizado com sucesso!"
     else
       render :edit, notice: 'Erro ao atualizar administrador'
@@ -33,6 +34,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    authorize @admin
     if @admin.destroy
       redirect_to backoffice_admins_path, notice: 'Administador excluído com sucesso.'
     else
@@ -54,6 +56,6 @@ class Backoffice::AdminsController < BackofficeController
       params[:admin].extract!(:password, :password_confirmation)
     end
 
-    params.require(:admin).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:admin).permit(policy(@admin).permitted_attributes)
   end
 end

@@ -40,11 +40,16 @@
                         <td><%= admin.full_name %></td>
                         <td><%= admin.email %></td>
                         <td><%= admin.role_i18n %></td>
-                        <td style="width: 150px;">
+                        <td style="width: 170px;">
+                          <%= link_to edit_backoffice_send_email_path(admin.id), class: 'btn btn-secondary',
+                          remote: true do %>
+                              <i class="fa fa-envelope"></i>
+                          <% end %>
                           <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-primary" do %>
                               <i class="fa fa-edit"></i>
                           <% end %>
-                          <% if current_admin.id != admin.id %>
+                          <% if current_admin.id != admin.id &&
+                             policy(admin).destroy? %>
                             <%= link_to backoffice_admin_path(admin.id), method: :delete, class: 'btn btn-danger',
                             data: {confirm_swal: I18n.t('messages.confirm_with', item: admin.first_name ) } do %>
                                 <i class="fa fa-trash"></i>
@@ -62,3 +67,5 @@
         </div>
   </div>
 </div>
+
+<%= render partial: 'backoffice/admins/shared/send_email' %>
