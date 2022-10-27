@@ -1,1 +1,8 @@
-alert('<%= @admin.email %>');
+$(function(){
+  $('#recipient-name').val('<%= @admin.email %>');
+  $('h5.modal-title').text('Enviar e-mail para <%= @admin.first_name %>');
+  $('#sendEmail').modal('show');
+  $('#sendEmail').on('show.bs.modal', function () {
+    $('#message-text').focus();
+  })
+});
