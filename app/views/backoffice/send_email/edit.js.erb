@@ -2,7 +2,7 @@ $(function(){
    let $sendEmail = $('#sendEmail')
 
    // Setting email and name on form
-  $('#recipient-name').val('<%= @admin.email %>');
+  $('#recipient-email').val('<%= @admin.email %>');
   $('h5.modal-title').text('Enviar e-mail para <%= @admin.first_name %>');
 
   // Shows the modal
@@ -10,6 +10,6 @@ $(function(){
 
   // Set focus Property on 'Message text' after modal show
   $sendEmail.on('show.bs.modal', function () {
-    $('#message-text').focus();
+    $('#subject-text').focus();
   })
 });
