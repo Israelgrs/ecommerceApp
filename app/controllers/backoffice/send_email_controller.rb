@@ -7,7 +7,14 @@ class Backoffice::SendEmailController < ApplicationController
   end
 
   def create
-    AdminMailer.send_message(current_admin, params[:'recipient-email'], params[:'subject-text'], params[:'message-text']).deliver_now
+    begin
+      AdminMailer.send_message(current_admin, params[:'recipient-email'], params[:'subject-text'], params[:'message-text']).deliver_now
+      @notify_message = 'E-mail enviado com sucesso!'
+      @notify_flag = 'success'
+    rescue StandardError => e
+      @notify_message = 'Erro ao enviar e-mail. Tente novamente'
+      @notify_flag = 'error'
+    end
 
     respond_to do |format|
       format.js
