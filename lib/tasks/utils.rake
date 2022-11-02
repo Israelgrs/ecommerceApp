@@ -12,4 +12,20 @@ namespace :utils do
     end
     p 'Pronto!'
   end
+
+  desc 'Cria Anúncios Fake'
+  task generate_ads: :environment do
+    p 'Cadastrando Anúncios'
+
+    100.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.sentence(3),
+        member: Member.all.sample,
+        category: Category.all.sample
+      )
+    end
+
+    p 'ANÚNCIOS CADASTRADOS'
+  end
 end
