@@ -2,7 +2,7 @@ class Backoffice::CategoriesController < BackofficeController
   before_action :set_category, only: %i[edit update]
 
   def index
-    @categories = Category.all
+    @categories = Category.order(description: :asc)
   end
 
   def new
