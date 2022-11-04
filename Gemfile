@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.7'
 # Object oriented authorization for Rails applications
 gem 'pundit'
 
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
 
