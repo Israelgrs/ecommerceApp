@@ -1,8 +1,8 @@
 class Site::HomeController < ApplicationController
-  layout "site"
+  layout 'site'
 
   def index
-    @categories = Category.all.order(description: :asc)
-    @ads = Ad.limit(8).order(created_at: :desc)
+    @categories = Category.order_by_description
+    @ads = Ad.home_ads
   end
 end
