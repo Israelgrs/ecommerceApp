@@ -1,5 +1,20 @@
 namespace :utils do
-  desc "Cadastra novos administradores aleatoriamente"
+
+  desc 'Setup Development'
+  task setup_dev: :environment do
+    p 'Executando o setup para desenvolvimento...'
+    puts `rails db:drop`
+    puts `rails db:create`
+    puts `rails db:migrate`
+    puts `rails db:seed`
+    puts `rails utils:generate_admins`
+    puts `rails utils:generate_members`
+    puts `rails utils:generate_ads`
+
+    p 'Setup executado com sucesso!'
+  end
+
+  desc 'Cadastra novos administradores aleatoriamente'
   task generate_admins: :environment do
     p 'Cadastrando novos administradores'
     10.times do
@@ -13,10 +28,23 @@ namespace :utils do
     p 'Pronto!'
   end
 
+  desc 'Cria membos fake'
+  task generate_members: :environment do
+    p 'Cadastrando Membros...'
+    50.times do
+      Member.create!(
+        email: Faker::Internet.email,
+        password: '123456',
+        password_confirmation: '123456'
+      )
+    end
+
+    p 'Membros Cadastrados com sucesso!'
+  end
+
   desc 'Cria Anúncios Fake'
   task generate_ads: :environment do
     p 'Cadastrando Anúncios'
-
     100.times do
       ad = Ad.new(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
