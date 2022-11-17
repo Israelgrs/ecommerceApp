@@ -32,3 +32,12 @@ Admin.create!(first_name: 'admin', last_name: 'Da silva', email: 'admin@admin.co
               password: '123456', password_confirmation: '123456', role: 0)
 
 puts 'Administrador cadastrado com sucesso!'
+
+#####  MEMBROS #####
+
+puts 'Cadastrando o membro padrão...'
+
+Member.create!(first_name: 'Membro padrão', last_name: 'Da silva', email: 'membro@membro.com.br',
+               password: '123456', password_confirmation: '123456')
+
+puts 'Membro cadastrado com sucesso!'

@@ -1,7 +1,7 @@
 <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="#!">Start Bootstrap</a>
+      <%= link_to t('app.name'), root_path, class: 'navbar-brand'  %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -18,12 +18,35 @@
               </ul>
           </li>
         </ul>
-          <form class="d-flex">
+          <form class="d-flex justify-content-end">
               <button class="btn btn-outline-dark" type="submit">
                   <i class="bi-cart-fill me-1"></i>
                   Cart
                   <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
               </button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <% if member_signed_in? %>
+                <li class="nav-item dropdown">
+                  <%= link_to '#', class: 'nav-link dropdown-toggle', id: 'navbarDropdown', role: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false' do %>
+                    <i class= "fa fa-user"></i> <%= current_member.first_name %>
+                  <% end %>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><%= link_to 'Perfil', root_path, class: 'dropdown-item'%></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'dropdown-item'%></li>
+                  </ul>
+              <% else %>
+                <li class="nav-item dropdown">
+                  <%= link_to '#', class: 'nav-link dropdown-toggle', id: 'navbarDropdown', role: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false' do %>
+                    <i class= "fa fa-user"></i>
+                  <% end %>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><%= link_to 'Login', new_member_session_path, class: 'dropdown-item'%></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><%= link_to 'Cadastre-se', new_member_registration_path, class: 'dropdown-item'%></li>
+                  </ul>
+              <% end %>
+            </ul>
           </form>
        </div>
     </div>
