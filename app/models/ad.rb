@@ -3,7 +3,8 @@ class Ad < ApplicationRecord
   belongs_to :member
 
   # Scopes
-  scope :home_ads, -> { limit(8).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 8) { limit(quantity).order(created_at: :desc) }
+  scope :member_ads, ->(current_member) { where(member: current_member).order(created_at: :desc) }
 
   # Active storage image
   has_one_attached :picture do |attached|

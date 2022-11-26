@@ -1,6 +1,6 @@
 class Site::HomeController < SiteController
 
   def index
-    @ads = Ad.home_ads
+    @ads = Ad.descending_order
   end
 end
