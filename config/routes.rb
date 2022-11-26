@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
     namespace :profile do
       resources :dashboard, only: %i[index]
+      resources :ads, only: %i[index]
     end
   end
 

@@ -1,15 +1,15 @@
-namespace :utils do
+namespace :dev do
 
   desc 'Setup Development'
-  task setup_dev: :environment do
+  task setup: :environment do
     p 'Executando o setup para desenvolvimento...'
     puts `rails db:drop`
     puts `rails db:create`
     puts `rails db:migrate`
     puts `rails db:seed`
-    puts `rails utils:generate_admins`
-    puts `rails utils:generate_members`
-    puts `rails utils:generate_ads`
+    puts `rails dev:generate_admins`
+    puts `rails dev:generate_members`
+    puts `rails dev:generate_ads`
 
     p 'Setup executado com sucesso!'
   end
