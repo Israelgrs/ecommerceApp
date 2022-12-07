@@ -21,9 +21,31 @@
       profile_member:
         one: Perfil
         other: Perfil
+    errors:  
+      models:
+        member:
+        admin:
+        category:
+        ad:
+          attributes:
+            title:
+              blank: Não pode ficar em branco
+            picture:
+              blank: Não pode ficar em branco
+            description:
+              blank: Não pode ficar em branco
+            category:
+              blank: Não pode ficar em branco
+            member:
+              blank: Não pode ficar em branco
+            price:
+              blank: Não pode ficar em branco
+              not_a_number: Deve ser um valor numérico
+        profile_member:
     attributes:
       member:
         id: Código
+        title: Título
         created_at: Criado em
         updated_at: Atualizado em
         email: E-mail
