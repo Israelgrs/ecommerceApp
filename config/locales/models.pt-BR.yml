@@ -41,6 +41,9 @@
             price:
               blank: Não pode ficar em branco
               not_a_number: Deve ser um valor numérico
+              greater_than: Deve ser maior que zero
+            finish_date:
+              blank: Não pode ficar em branco
         profile_member:
     attributes:
       member:
@@ -79,6 +82,7 @@
         finish_date: Data de finalização
         image: Imagem
         price: Preço
+        finish_date: Data de finalização
       profile_member:
         id: Código
         created_at: Criado em

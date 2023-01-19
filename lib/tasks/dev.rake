@@ -53,6 +53,7 @@ namespace :dev do
         description: Faker::Lorem.sentence(3),
         member: Member.all.sample,
         category: Category.all.sample,
+        finish_date: Date.today + Random.rand(90),
         price: "#{Random.rand(1000)},#{Random.rand(99)}"
       )
       ad.picture.attach(io: File.open(Rails.root.join('public', 'templates', 'images-for-ads', "#{rand(8)}.jpg")), filename: 'picture.jpg')
