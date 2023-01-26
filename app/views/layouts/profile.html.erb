@@ -68,9 +68,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
     <%= render partial: "layouts/site_shared/footer" %>
-    <% if notice %>
-      <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-    <% end %>
+    <%= render partial: 'layouts/shared/notifications' %>
   </body>
 </html>
 
