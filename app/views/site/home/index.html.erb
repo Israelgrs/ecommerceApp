@@ -20,7 +20,7 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder"><%= truncate(ad.title, length: 20) %></h5>
+                                <h5 class="fw-bolder"><%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad.id) %></h5>
                                 <!-- Product price-->
                                 <%= humanized_money_with_symbol(ad.price) %>
                             </div>

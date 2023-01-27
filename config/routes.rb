@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :dashboard, only: %i[index]
       resources :ads, only: %i[index edit update new create]
     end
+
+    resources :ad_details, only: %i[show]
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
