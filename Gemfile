@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# The safe Markdown parser, reloaded.
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
 # Object oriented authorization for Rails applications
 gem 'pundit'
 

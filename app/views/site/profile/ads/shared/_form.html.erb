@@ -62,5 +62,20 @@
       </div>
     </div>
     <br>
+    <div class="row">
+      <div class= "col-xs-12">
+        <div class="form-group">
+         <div class="panel panel-primary">
+          <div class="panel-heading">
+            Pré visualização
+          </div>
+            <div class="panel-body">
+              <%= md_to_html(@ad.description) %>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <br>
     <%= submit_tag 'Enviar', class: 'btn btn-primary' %>
   <% end %>
