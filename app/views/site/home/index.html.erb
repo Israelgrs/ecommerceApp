@@ -23,6 +23,7 @@
                                 <h5 class="fw-bolder"><%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad.id) %></h5>
                                 <!-- Product price-->
                                 <%= humanized_money_with_symbol(ad.price) %>
+                                <br><%= ad.description_short %>
                             </div>
                         </div>
                         <!-- Product actions-->

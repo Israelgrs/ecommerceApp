@@ -50,7 +50,8 @@ namespace :dev do
     100.times do
       ad = Ad.new(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: Faker::Lorem.sentence(3),
+        description_md: Faker::Markdown.emphasis,
+        description_short: Faker::Lorem.sentence(3),
         member: Member.all.sample,
         category: Category.all.sample,
         finish_date: Date.today + Random.rand(90),

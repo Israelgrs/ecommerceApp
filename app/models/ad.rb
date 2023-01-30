@@ -1,10 +1,14 @@
 class Ad < ApplicationRecord
+  # Callbacks
+  before_save :md_to_html
+
+  # Relationships
   belongs_to :category
   belongs_to :member
 
   # validates
   validates :member, :category, :picture, :finish_date, presence: true
-  validates :description, :title, presence: true
+  validates :description_md, :description_short, :title, presence: true
   validates :price, numericality: { greater_than: 0 }
 
   # Scopes
@@ -18,4 +22,25 @@ class Ad < ApplicationRecord
 
   # gem money_rails
   monetize :price_cents
+
+  private
+  def md_to_html
+    options = {
+      filter_html: true,
+      link_attributes: {
+        rel: "nofollow",
+        target: "_blank"
+      }
+    }
+
+    extensions = {
+      space_after_headers: true,
+      autolink: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    self.description = markdown.render(self.description_md).html_safe
+  end
 end
