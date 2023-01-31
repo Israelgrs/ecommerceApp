@@ -13,7 +13,7 @@
                   <li><a class="dropdown-item" href="#!">Todos os produtos</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <% @categories.each do |category|%>
-                    <li><a class="dropdown-item" href="#!"><%= category.description %></a></li>
+                    <li><a class="dropdown-item" href="#!"><%= category.description %> <%= category.ads_count %></a></li>
                   <% end %>
               </ul>
           </li>
