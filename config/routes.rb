@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
 
     resources :ad_details, only: %i[show]
+    resources :categories, only: %i[show]
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
