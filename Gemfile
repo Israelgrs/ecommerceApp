@@ -42,6 +42,9 @@ gem 'pundit'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. It allows you to create pretty URL’s and work with human-friendly strings as if they were numeric ids for ActiveRecord models.
+gem 'friendly_id', '~> 5.4.0'
+
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
 

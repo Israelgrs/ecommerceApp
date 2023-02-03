@@ -6,10 +6,10 @@ class Site::CategoriesController < SiteController
 
   private
   def set_item
-    @item = Category.find(params[:id])
+    @item = Category.friendly.find(params[:id])
   end
 
-  def set_ads
-    @ads = Ad.where_category(params[:id])
+  def set_ads 
+    @ads = Ad.where_category(@item[:id])
   end
 end

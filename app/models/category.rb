@@ -1,8 +1,11 @@
 class Category < ApplicationRecord
- # Relationships
- has_many :ads
+  # Gem Friendly Id
+  include FriendlyId
+  friendly_id :description, use: :slugged
+  # Relationships
+  has_many :ads
 
- # Validations 
+  # Validations 
   validates_presence_of :description
 
   # Scopes
