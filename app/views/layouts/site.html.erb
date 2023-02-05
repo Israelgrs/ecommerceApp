@@ -20,6 +20,18 @@
     </head>
     <body>
       <%= render partial: "layouts/site_shared/navigation" %>
+      <div class="row">
+        <div class="well">
+          <div class="input-group input-group-sm mb-3">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <div class="input-group-prepend">
+              <span class="input-group-btn">
+                <button class="btn btn-outline-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <%= render partial: "layouts/site_shared/header" %>
       <%= yield %>
       <%= render partial: "layouts/site_shared/footer" %>
