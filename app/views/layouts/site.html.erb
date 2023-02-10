@@ -20,18 +20,20 @@
     </head>
     <body>
       <%= render partial: "layouts/site_shared/navigation" %>
-      <div class="row">
-        <div class="well">
-          <div class="input-group input-group-sm mb-3">
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            <div class="input-group-prepend">
-              <span class="input-group-btn">
-                <button class="btn btn-outline-secondary" type="button">Go!</button>
-              </span>
+      <%= form_with url: site_search_path, method: :get do |f| %>
+        <div class="row">
+          <div class="well">
+            <div class="input-group input-group-sm mb-3">
+              <%= f.text_field :query, class: 'form-control' %>
+              <div class="input-group-prepend">
+                <span class="input-group-btn">
+                  <%= f.submit 'Pesquisar', class: 'btn btn-outline-secondary' %>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
       <%= render partial: "layouts/site_shared/header" %>
       <%= yield %>
       <%= render partial: "layouts/site_shared/footer" %>
