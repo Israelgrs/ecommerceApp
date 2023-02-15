@@ -12,9 +12,10 @@ class Ad < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
 
   # Scopes
-  scope :descending_order, ->(quantity = 8) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 8, page) { order(created_at: :desc).page(page).per(quantity) }
   scope :member_ads, ->(current_member) { where(member: current_member).order(created_at: :desc) }
   scope :where_category, ->(id) { where(category_id: id).order(title: :asc) }
+  scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(8) }
 
   # Active storage image
   has_one_attached :picture do |attached|

@@ -48,6 +48,12 @@ gem 'friendly_id', '~> 5.4.0'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
 
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+
+# Translations for the kaminari gem
+gem 'kaminari-i18n'
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
