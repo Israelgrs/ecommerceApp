@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :send_email, only: %i[edit create]
     resources :admins, except: %i[show]
     resources :categories, except: %i[show destroy]
+    resources :diagrams, only: %i[index]
   end
   devise_for :admins, skip: [:registrations]
   devise_for :members, controllers: { sessions: 'members/sessions'}
