@@ -15,9 +15,11 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                     Administradores
                 <% end %>
-                <%= link_to backoffice_diagrams_path, method: :get, class:"nav-link" do %>
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                    Diagrama ER
+                <% if Rails.env.development? %>
+                  <%= link_to backoffice_diagrams_path, method: :get, class:"nav-link" do %>
+                      <div class="sb-nav-link-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                      Diagrama ER
+                  <% end %>
                 <% end %>
                 <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
