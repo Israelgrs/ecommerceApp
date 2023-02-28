@@ -10,6 +10,7 @@ namespace :dev do
     puts `rails dev:generate_admins`
     puts `rails dev:generate_members`
     puts `rails dev:generate_ads`
+    puts `rails dev:generate_comments`
 
     p 'Setup executado com sucesso!'
   end
@@ -42,6 +43,23 @@ namespace :dev do
     end
 
     p 'Membros Cadastrados com sucesso!'
+  end
+
+  desc 'Cria comentários fake'
+  task generate_comments: :environment do
+    p 'Criando comentários...'
+    
+    Ad.all.each do |ad|
+      (Random.rand(3)).times do
+        Comment.create!(
+          body: Faker::Lorem.sentence([1,2,3,4,5].sample),
+          member: Member.all.sample,
+          ad: ad
+        )
+      end
+    end
+
+    p 'Comentários Cadastrados com sucesso!'
   end
 
   desc 'Cria Anúncios Fake'

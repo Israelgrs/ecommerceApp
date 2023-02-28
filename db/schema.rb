@@ -90,8 +90,10 @@ ActiveRecord::Schema.define(version: 2023_02_28_022445) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.bigint "member_id", null: false
+    t.bigint "ad_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_comments_on_ad_id"
     t.index ["member_id"], name: "index_comments_on_member_id"
   end
 
@@ -129,5 +131,6 @@ ActiveRecord::Schema.define(version: 2023_02_28_022445) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "ads", "categories"
   add_foreign_key "ads", "members"
+  add_foreign_key "comments", "ads"
   add_foreign_key "comments", "members"
 end
