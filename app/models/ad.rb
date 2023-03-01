@@ -5,6 +5,7 @@ class Ad < ApplicationRecord
   # Relationships
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   # validates
   validates :member, :category, :picture, :finish_date, presence: true
