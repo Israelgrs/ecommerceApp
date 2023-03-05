@@ -50,7 +50,7 @@ namespace :dev do
     p 'Criando comentários...'
     
     Ad.all.each do |ad|
-      (Random.rand(3)).times do
+      (Random.rand(1..3)).times do
         Comment.create!(
           body: Faker::Lorem.sentence([1,2,3,4,5].sample),
           member: Member.all.sample,

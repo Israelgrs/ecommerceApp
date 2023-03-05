@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :ad_details, only: %i[show]
     resources :categories, only: %i[show]
+    resources :comments, only: %i[create]
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
