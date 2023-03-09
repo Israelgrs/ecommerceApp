@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     current_admin
   end
 
-  protected
+  private
 
   def user_not_authorized
     flash[:alert] = 'Você não tem permissão para realizar esta ação'
