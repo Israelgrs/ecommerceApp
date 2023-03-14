@@ -54,6 +54,9 @@ gem 'kaminari'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 
+#  A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 

@@ -33,6 +33,7 @@
             Faça Login para deixar um comentário
           </button>
         <% end %>
+        <%= rating_for @ad, 'quality' %>
 
         <!-- Modal -->
         <%= render partial: 'site/ad_details/comment_modal' %>

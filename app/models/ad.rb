@@ -1,4 +1,6 @@
 class Ad < ApplicationRecord
+  # ratyRate gem
+  ratyrate_rateable 'quality'
   # Callbacks
   before_save :md_to_html
 

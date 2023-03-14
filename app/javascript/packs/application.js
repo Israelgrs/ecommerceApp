@@ -25,4 +25,3 @@ global.simpleDatatables = require('simple-datatables')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-

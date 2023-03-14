@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   namespace :site do
     get 'home', to: 'home#index'
     get 'search', to: 'search#ads'

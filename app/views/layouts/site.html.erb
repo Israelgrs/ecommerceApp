@@ -12,12 +12,12 @@
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= stylesheet_link_tag 'site', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_pack_tag 'site', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'notify' %>
 
 
       <!-- Favicon-->
-      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+      <link rel="icon" type="<%= image_path("favicon.ico") %>" rel="shortcut icon" />
     </head>
     <body>
       <%= render partial: "layouts/site_shared/navigation" %>
