@@ -29,11 +29,11 @@
             Deixe seu comentário
           </button>
         <% else %>
-          <button type="button" onclick="openModal()" class="btn btn-primary" disabled="disabled" data-toggle="modal" data-target="#myModal">
-            Faça Login para deixar um comentário
-          </button>
+          <%= link_to 'Faça Login para deixar um comentário', new_member_session_path, class: 'btn btn-primary' %>
         <% end %>
-        <%= rating_for @ad, 'quality' %>
+        <% if member_signed_in? %>
+            <%= rating_for @ad, 'quality' %>
+        <% end %>
 
         <!-- Modal -->
         <%= render partial: 'site/ad_details/comment_modal' %>

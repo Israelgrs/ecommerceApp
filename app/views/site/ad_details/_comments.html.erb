@@ -18,14 +18,16 @@
                             <h6 class="fw-bold mb-1"><%= comment.member.full_name %></h6>
                             <div class="d-flex align-items-center mb-3">
                             <p class="mb-0">
-                                <%= l comment.created_at, format: :long %>
+                                <%= time_ago_in_words(comment.created_at) %> atrás
                                 <span class="badge bg-primary">Pending</span>
                             </p>
                             <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
                             <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
                             <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                             </div>
-                            <%= rating_for_user @ad, comment.member, 'quality', star: 10 %>
+                            <% if member_signed_in? && current_member.id == comment.member_id %>
+                              <%= rating_for_user @ad, comment.member, 'quality', star: 10 %>
+                            <% end %>
                             <p class="mb-0"><%= comment.body %></p>
                         </div>
                         </div>
