@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :diagrams, only: %i[index]
   end
   devise_for :admins, skip: [:registrations]
-  devise_for :members, controllers: { sessions: 'members/sessions'}
+  devise_for :members, controllers: { sessions: 'members/sessions', registrations: 'members/registrations'}
   root 'site/home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
