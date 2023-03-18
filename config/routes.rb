@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: %i[index]
       resources :ads, only: %i[index edit update new create]
+      resources :member, only: %i[edit update]
     end
 
     resources :ad_details, only: %i[show]

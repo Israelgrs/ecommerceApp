@@ -1,0 +1,38 @@
+  <%= form_for([:site, :profile, @member], html: { multipart: true }) do |f| %>
+    <div class="row">
+    <% if @member.errors.any? %>
+      <% @member.errors.full_messages.each do |message| %>
+        <script>
+          $.notify( '<%= message %>' , { className: 'error',
+          globalPosition: 'right bottom' } );
+        </script>
+      <% end %>
+    <% end %>
+     <div class="row">
+      <div class= "col-lg-6">
+        <div class="form-group">
+          <%= f.label 'Primeiro nome' %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class= "col-lg-6">
+        <div class="form-group">
+          <%= f.label 'Sobrenome' %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class= "col-lg-4">
+        <div class="form-group">
+          <%= f.label 'E-mail' %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <%= submit_tag 'Enviar', class: 'btn btn-primary' %>
+  <% end %>

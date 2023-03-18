@@ -78,7 +78,7 @@
             Pré visualização
           </div>
             <div class="panel-body">
-              <%= @ad.description.html_safe %>
+              <%= @ad.description.present? ? @ad.description.html_safe : @ad.description %>
             </div>
          </div>
         </div>

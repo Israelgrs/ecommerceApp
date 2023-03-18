@@ -30,7 +30,7 @@
                    <%= link_to 'Meus Anúncios', site_profile_ads_path, class: 'list-group-item list-group-item-action list-group-item-dark p-3' %>
                     <%= link_to 'Cadastro de Anúncios', new_site_profile_ad_path, class: 'list-group-item list-group-item-action list-group-item-dark p-3'  %>
                     <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Profile</a>
+                    <%= link_to 'Dados pessoais', edit_site_profile_member_path(current_member.id), class: 'list-group-item list-group-item-action list-group-item-dark p-3' %>
                     <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Status</a>
                 </div>
             </div>
