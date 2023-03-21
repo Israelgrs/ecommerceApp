@@ -39,3 +39,9 @@
 	</div>
 </div>
 <%= render "members/shared/links" %>
+<%= javascript_include_tag 'notify' %>
+<% if flash['alert'] %>
+  <script>
+    $.notify('<%= flash['alert'] %>', "error");
+  </script>
+ <% end %>
