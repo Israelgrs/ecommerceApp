@@ -52,6 +52,8 @@
         created_at: Criado em
         updated_at: Atualizado em
         email: E-mail
+        first_name: Primeiro nome
+        last_name: Sobrenome
         password: Senha
         password_confirmation: Confirmação de senha
       admin:
@@ -83,10 +85,3 @@
         image: Imagem
         price: Preço
         finish_date: Data de finalização
-      profile_member:
-        id: Código
-        created_at: Criado em
-        updated_at: Atualizado em
-        first_name: Primeiro nome
-        second_name: Segundo nome
-        birthdate: Data de nascimento

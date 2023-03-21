@@ -1,25 +1,36 @@
-<h2>Change your password</h2>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "members/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "members/shared/links" %>
+<div class="container">
+    <div class="row">
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Reset Password</h3>
+			 	</div>
+			  <div class="panel-body">
+				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="form-group">
+            <%= f.password_field :password, placeholder: 'Nova Senha', autocomplete: "New Password", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, placeholder: 'Confirmação de Nova Senha', autocomplete: "New Password confirmation", class: 'form-control' %>
+          </div>
+            <%= f.submit "Change Password", class: 'btn btn-lg btn-success btn-block' %>
+				<% end %>
+        <hr/>
+        <%= render "members/shared/links" %>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<%= javascript_include_tag 'notify' %>
+<% if flash['alert'] %>
+  <script>
+    $.notify('<%= flash['alert'] %>', "error");
+  </script>
+ <% end %>
