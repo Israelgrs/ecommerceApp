@@ -10,6 +10,13 @@
                             <span class="text-decoration-line-through">$45.00</span>
                             <span><%= humanized_money_with_symbol(@ad.price) %></span>
                         </div>
+                        <% if member_signed_in? %>
+                          <button type="button" onclick="openModal()" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                            Comprar
+                          </button>
+                        <% else %>
+                          <%= link_to 'Comprar', new_member_session_path, class: 'btn btn-success' %>
+                        <% end %>
                         <p class="lead"><%= @ad.description.html_safe %></p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />

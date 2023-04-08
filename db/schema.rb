@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_14_012541) do
+ActiveRecord::Schema.define(version: 2023_04_08_030526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -138,6 +138,16 @@ ActiveRecord::Schema.define(version: 2023_03_14_012541) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "ad_id", null: false
+    t.integer "status", default: 0
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_orders_on_ad_id"
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
+  end
+
   create_table "overall_averages", force: :cascade do |t|
     t.string "rateable_type"
     t.bigint "rateable_id"
@@ -178,4 +188,5 @@ ActiveRecord::Schema.define(version: 2023_03_14_012541) do
   add_foreign_key "ads", "members"
   add_foreign_key "comments", "ads"
   add_foreign_key "comments", "members"
+  add_foreign_key "orders", "ads"
 end

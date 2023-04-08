@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create]
   end
 
+  namespace :checkout do
+    resources :payments, only: %i[create]
+  end
+
   get 'backoffice', to: 'backoffice/dashboard#index'
   namespace :backoffice do
     get 'dashboard', to: 'dashboard#index'
