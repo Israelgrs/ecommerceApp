@@ -4,6 +4,9 @@ class Ad < ApplicationRecord
   # Callbacks
   before_save :md_to_html
 
+  # Enum
+  enum status: %i[active processing sold]
+
   # Relationships
   belongs_to :category, counter_cache: true
   belongs_to :member

@@ -10,12 +10,19 @@
                             <span class="text-decoration-line-through">$45.00</span>
                             <span><%= humanized_money_with_symbol(@ad.price) %></span>
                         </div>
-                        <% if member_signed_in? %>
-                          <button type="button" onclick="openModal()" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                            Comprar
-                          </button>
+                        <% if @ad.active? %>
+                          <% if member_signed_in? %>
+                            <%= form_tag(checkout_payments_path) do %>
+                              <%= hidden_field_tag :ad_id, @ad.id %>
+                              <%= submit_tag 'Comprar', class: 'btn btn-success', data: {confirm: 'Deseja realmente comprar?' } %>
+                            <% end %>
+                          <% else %>
+                            <%= link_to 'Comprar', new_member_session_path, class: 'btn btn-success' %>
+                          <% end %>
                         <% else %>
-                          <%= link_to 'Comprar', new_member_session_path, class: 'btn btn-success' %>
+                           <button class="btn btn-secondary" disabled="true">
+                             <%= "#{@ad.status_i18n}" %>         
+                           </button>
                         <% end %>
                         <p class="lead"><%= @ad.description.html_safe %></p>
                         <div class="d-flex">
